@@ -10,6 +10,7 @@ Para poder realizar el despligue se necesita lo siguiente:
 - Tener una GPU NVIDIA para poder realizar inferencia del modelo.
 - Tener Docker instalado.
 - Tener libres los puertos 5554 y 5555.
+- Tener los pesos del modelo en la carpeta ficheros, que está dentro del directorio api. Dicho archivo debe ser guardado con el nombre model.pth.tar. Para descargar los pesos visite el siguiente enlace: https://drive.usercontent.google.com/download?id=199mfhGYSuf2bieMAMR1FNn1vwl8qhDKW&export=download&authuser=0
 
 # Pasos
 
