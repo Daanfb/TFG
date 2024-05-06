@@ -42,6 +42,9 @@ Para poder utilizar la GPU en Ubuntu también se necesita Nvidia Container Toolk
 `            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \`  
 `            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list`  
 
+`sudo apt-get update`  
+`sudo apt-get install -y nvidia-docker2`  
+`sudo systemctl restart docker`
 
 # Pasos para el despliegue
 
