@@ -18,13 +18,13 @@ Para poder realizar el despligue se necesita lo siguiente:
 
 Abrir una terminal ubicada en el directorio principal y ejecutar los siguientes comandos:
 
-1. **docker-compose build**: En el directorio donde se encuentra el archivo *docker-compose.yml* y las carpetas *web* y *api*, ejecutamos este comando para construir las imágenes para cada servicio.
-2. **docker-compose up -d**: Una vez se hayan construido las imágenes, iniciamos los contenedores con este comando. Con la bandera *-d* ejecutamos los contenedores en segundo plano.	
-3. **docker-compose ps -a**: Con este comando sabremos si los contenedores se encuentran en ejecución.
+1. **docker compose build**: En el directorio donde se encuentra el archivo *docker-compose.yml* y las carpetas *web* y *api*, ejecutamos este comando para construir las imágenes para cada servicio.
+2. **docker compose up -d**: Una vez se hayan construido las imágenes, iniciamos los contenedores con este comando. Con la bandera *-d* ejecutamos los contenedores en segundo plano.	
+3. **docker compose ps -a**: Con este comando sabremos si los contenedores se encuentran en ejecución.
 
 Una vez realizados dichos pasos correctamente, buscamos en el navegador la ruta *http://localhost:5554*
 
-Cualquier cambio realizado en las carpetas \textit{web} y \textit{api} se muestran automáticamente en el contenedor, y viceversa.
+Cualquier cambio realizado en las carpetas *web* y *api* se muestran automáticamente en el contenedor, y viceversa.
 
 Si queremos ver el log de alguno de los dos contenedores escribimos el comando *docker-compose logs -f [web|api]* donde *-f* es para verlo en tiempo real y *[web|api]* indica que se debe escribir web o api en función del contenedor en el que estamos interesados.
 
