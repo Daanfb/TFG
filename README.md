@@ -69,9 +69,3 @@ A continuación, se muestran otros comandos interesantes:
 - **docker compose start [web|api]**: Para reanudar la ejecución del contenedor.
 - **docker compose exec -it [web|api] bin/bash**: Para entrar en la terminal del contenedor.
 - **docker system prune --volumes -a**: Elimina los contenedores detenidos, todas las imágenes detenidas, redes que ne se usan y volúmenes de persistencia que no están siendo no utilizados, ya que cuando se eliminan con los anterios comandos, se siguen quedando almacenados.
-
-
-Si queremos ver el log de alguno de los dos contenedores escribimos el comando *docker-compose logs -f [web|api]* donde *-f* es para verlo en tiempo real y *[web|api]* indica que se debe escribir web o api en función del contenedor en el que estamos interesados.
-
-Por otro lado, para parar un contenedor escribimos *docker-compose stop [web|api]*, y para reanudarlo, *docker-compose start [web|api]*.
-
