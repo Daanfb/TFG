@@ -64,8 +64,8 @@ Cualquier cambio realizado en las carpetas *web* y *api* se muestran automática
 A continuación, se muestran otros comandos interesantes:
 
 - **docker compose logs -f [web|api]**: Para ver el log de alguno de los dos contenedores (*-f* para verlo en tiempo real). *[web|api]* indica que se debe escribir web o api en función del contenedor en el que estamos interesados.
-- **docker compose stop [web|api]**: Para parar la ejecución del contenedor.
+- **docker compose stop [web|api]**: Para la ejecución del contenedor.
 - **docker compose down**: Para la ejecución de los contenedores y los elimina, al igual, que sus imágenes.
-- **docker compose start [web|api]**: Para reanudar la ejecución del contenedor.
+- **docker compose start [web|api]**: Reanuda la ejecución del contenedor.
 - **docker compose exec -it [web|api] bin/bash**: Para entrar en la terminal del contenedor.
-- **docker system prune --volumes -a**: Elimina los contenedores detenidos, todas las imágenes detenidas, redes que ne se usan y volúmenes de persistencia que no están siendo no utilizados, ya que cuando se eliminan con los anterios comandos, se siguen quedando almacenados.
+- **docker system prune --volumes -a**: Elimina los contenedores detenidos, todas las imágenes detenidas, redes que n0 se usan y volúmenes de persistencia que no están siendo utilizados, ya que cuando se eliminan con los anteriores comandos, se siguen quedando almacenados en el sistema.
