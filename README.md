@@ -68,4 +68,4 @@ A continuación, se muestran otros comandos interesantes:
 - **docker compose down**: Para la ejecución de los contenedores y los elimina, al igual, que sus imágenes.
 - **docker compose start [web|api]**: Reanuda la ejecución del contenedor.
 - **docker compose exec -it [web|api] bin/bash**: Para entrar en la terminal del contenedor.
-- **docker system prune --volumes -a**: Elimina los contenedores detenidos, todas las imágenes detenidas, redes que n0 se usan y volúmenes de persistencia que no están siendo utilizados, ya que cuando se eliminan con los anteriores comandos, se siguen quedando almacenados en el sistema.
+- **docker system prune --volumes -a**: Elimina los contenedores detenidos, todas las imágenes detenidas, redes que no se usan y volúmenes de persistencia que no están siendo utilizados, ya que cuando se eliminan con los anteriores comandos, se siguen quedando almacenados en el sistema.
