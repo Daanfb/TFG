@@ -13,7 +13,13 @@ Para poder realizar el despligue se necesita lo siguiente:
 - Tener libres los puertos 5554 y 5555.
 - Tener los pesos del modelo en la carpeta ficheros, que está dentro del directorio api. Dicho archivo debe ser guardado con el nombre model.pth.tar. Para descargar los pesos visite el siguiente enlace: https://drive.usercontent.google.com/download?id=199mfhGYSuf2bieMAMR1FNn1vwl8qhDKW&export=download&authuser=0
 
-# Instrucciones para realizar la instalación de Docker en Ubuntu 
+# Instrucciones para realizar la instalación de Docker
+
+## Windows 10/11
+
+Descarga Docker Desktop desde la página: https://docs.docker.com/desktop/install/windows-install/
+
+## Ubuntu (>=20.04)
 
 Instrucciones obtenidas de https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
