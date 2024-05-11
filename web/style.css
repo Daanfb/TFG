@@ -1,0 +1,598 @@
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('FontsFree-Net-SFProText-Regular.ttf');
+}
+
+*{
+    font-family: 'SF Pro Text';
+}
+
+:root{
+    --nav-color-texto: rgb(208,208,208);
+    --nav-color: rgb(18, 18, 18);
+    --section-color-black: rgb(16, 16, 16);
+    --section-color-full-black: rgb(0, 0, 0);
+    --section-color-gris-medio: rgb(29, 29, 31);
+    --btn-subirArchivo-color: white;
+    --btn-subirArchivo-color-hover: rgb(208, 208, 208);
+    --btnEliminarArchivo-color: rgb(225, 64, 64);
+    --btnEliminarArchivo-color-hover: rgb(168, 47, 47);
+    --btnEnviarVideos-color: rgb(29, 108, 182);
+    --btnEnviarVideos-color-hover: rgb(32, 99, 162);
+    --color-clase-no-seleccionada: rgb(74, 74, 79);
+}
+
+/******************************************************/
+
+body{
+    margin:0;
+    background-color: black;
+}
+
+/******************************************************/
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************/
+
+nav{
+    color: var(--nav-color-texto);
+    background-color: var(--nav-color);
+    padding-top:7px;
+    padding-bottom: 7px;
+
+}
+
+.nav__texto{
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-nav);
+}
+
+/******************************************************/
+
+.introUniversidad{
+    text-align: center;
+    height: 380px;
+    background-color: black;
+}
+
+.t1{
+    font-size: var(--font-size-t1);
+    color: white;
+}
+
+.t2{
+    font-size: var(--font-size-t2);
+    color: white;
+}
+
+.t3{
+    font-size: var(--font-size-t3);
+    color: var(--nav-color-texto);
+}
+
+.imgUS{
+    max-height: 40%;
+    object-fit: cover;
+}
+
+/******************************************************/
+
+.seccion{
+    display: grid;
+    color: white;
+    height: var(--height-section);
+}
+
+.seccionImg{
+    display: flex;
+    justify-content: center;
+}
+
+.imgSeccion{
+    max-height: var(--height-section);
+    object-fit: cover;
+}
+
+.seccionTexto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccionTexto h2{
+    font-size: var(--font-size-h2-seccionTexto);
+    font-weight: bold;
+}
+
+.seccionTexto p{
+    font-size: var(--font-size-p-seccionTexto);
+}
+
+/******************************************************/
+
+.seccionImpar{
+    background-color: var(--section-color-black);
+    grid-template-columns: 2fr 1fr;
+}
+
+.columnaIzq{
+    grid-column: 1/2;
+}
+
+.columnaDer{
+    grid-column: 2/2;
+}
+
+/******************************************************/
+
+.seccionPar{
+    background-color: var(--section-color-full-black);
+    grid-template-columns: 1fr 2fr;
+}
+
+/******************************************************/
+
+.texto-rojo{
+    color: rgb(168, 47, 47)
+}
+
+.texto-amarillo{
+    color: #FFD700;
+}
+
+.texto-azul{
+    color: rgb(29, 108, 182);
+}
+
+.textoIzq{
+    padding-left: 4rem;
+}
+
+.textoDer{
+    padding-right: 4rem;
+}
+
+
+/******************************************************/
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+
+/******************************************************/
+
+.seccionArchivo{
+    background-color: var(--section-color-gris-medio);
+    height: var(--height-section-archivo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+}
+
+/******************************************************/
+
+.errorzone {
+    position: absolute;
+    z-index: 1;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mensajeError{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 6px 0px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+
+}
+
+.mensajeError h2{
+    text-align: center;
+}
+
+.progressBar {
+    width: 100%;
+}
+
+.progress {
+    height: 3px;
+    width: 0;
+    background-color: #ff5959;
+    border-radius: 0px 0px 10px 10px;
+    transition: width 1.9s linear;
+}
+
+/******************************************************/
+
+.dropzone {
+    border: 5px dashed white;
+    padding: 20px;
+    text-align: center;
+    width: var(--width-dropzone);
+    height: calc(var(--height-section-archivo)/2);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.active{
+    background-color: rgb(81, 83, 81);
+    color: black;
+}
+
+.textoDropzone h2{
+    font-size: var(--font-size-h2-textoDropzone);
+}
+
+.textoDropzone h4{
+    font-size: var(--font-size-h4-textoDropzone);
+}
+
+.videos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+}
+
+.archivoImg{
+    width: 60px;
+}
+
+.archivoTexto{
+    margin-right: 100px;
+    font-size: var(--font-size-archivoTexto);
+}
+
+.btnDropzone{
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+}
+
+.btnSubirArchivo{
+    background-color: white;
+}
+
+.btnSubirArchivo:hover{
+    background-color: var(--btn-subirArchivo-color-hover);
+    transition: all 0.5s;
+}
+
+.btnEliminarArchivo{
+    position: absolute;
+    right: 0;
+    background-color: var(--btnEliminarArchivo-color);
+    margin: 0;
+}
+
+.btnEliminarArchivo:hover{
+    background-color: var(--btnEliminarArchivo-color-hover);
+    transition: all 0.5s;
+}
+
+/******************************************************/
+
+.contenedorBtnDropzone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnEnviar{
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+    background-color: var(--btnEnviarVideos-color);
+}
+
+.btnEnviar:hover{
+    background-color: var(--btnEnviarVideos-color-hover);
+    transition: all 0.5s;
+}
+
+.oculto{
+    display: None;
+}
+
+.contenedorCargando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cargando{
+    width: 7%;
+}
+
+/******************************************************/
+
+.seccionAcciones{
+    display: None;
+    flex-direction: column;
+    background-color: var(--section-color-gris-medio);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.seccionAcciones h2{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+    font-size: var(--font-size-h2-seccionAcciones);
+}
+
+.acciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.columnaAcciones{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.accion{
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-clase-no-seleccionada);
+    gap: 10px;
+    font-size: var(--font-size-accion);
+    border: 1px solid var(--section-color-gris-medio); /* Define el borde */
+    border-radius: 50px; /* Redondea el borde */
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.accion:not(.accionSeleccionada):hover{
+    background-color: var(--color-clase-no-seleccionada);
+    color: white;
+}
+
+.accion:not(.accionSeleccionada):hover img{
+    filter: invert(98%) sepia(100%) saturate(18%) hue-rotate(211deg) brightness(103%) contrast(100%);
+}
+
+.accionSeleccionada{
+    border: 1px solid black;
+    transition: all 0.5s;
+    filter: invert(98%) sepia(100%) saturate(18%) hue-rotate(211deg) brightness(103%) contrast(100%);    
+}
+
+.iconoAccion{
+    height:var(--height-iconoAccion);
+}
+
+.accion:not(.accionSeleccionada) img {
+    filter: invert(28%) sepia(0%) saturate(12%) hue-rotate(289deg) brightness(101%) contrast(96%);
+}
+
+/******************************************************/
+
+.contenedorProgreso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorBarraProgreso{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px;
+}
+
+.barraProgresoVideosFull{
+    width: var(--width-barraProgresoVideosFull);
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.barraProgresoVideos{
+    width: 0px;
+    height: 20px;
+    border-radius: 10px;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; /* La animación está en pausa por defecto */
+}
+
+@keyframes aumentarAncho {
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes aumentarAnchoFinal {
+    from {
+        width: 80%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.textoProgreso{
+    color: white;
+    font-size: var(--font-size-textoProgreso);
+}
+
+/******************************************************/
+
+.contenedorProgreso-BtnAcciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contenedorBtnElegirAcciones{
+    display: flex;
+    justify-content: center;
+    grid-column: 2/3;
+}
+
+.btnElegirAcciones{
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+    font-size: var(--font-size-btnElegirAcciones);
+    font-weight: bold;
+}
+
+/* Estilos para pantallas de tamaño grande */
+@media (min-width: 1200px) {
+    :root {
+        --height-section: 500px;
+        --height-section-archivo: 700px;
+        --width-dropzone: 500px;
+        --font-size-nav: 1rem;
+        --font-size-t1: 2rem;
+        --font-size-t2: 1.7rem;
+        --font-size-t3: 1.2rem;
+        --font-size-h2-seccionTexto: 1.75rem;
+        --font-size-p-seccionTexto: 1.25rem;
+        --font-size-h2-textoDropzone: 1.5rem;
+        --font-size-h4-textoDropzone: 1.1rem;
+        --font-size-archivoTexto: 1rem;
+        --font-size-h2-seccionAcciones: 1.6rem;
+        --height-iconoAccion: 1.7rem;
+        --font-size-accion: 1rem;
+        --font-size-btnElegirAcciones: 1.2rem;
+        --font-size-textoProgreso: 1rem;
+        --width-barraProgresoVideosFull: 150px;
+    }
+}
+
+/* Estilos para pantallas de tamaño mediano */
+@media (min-width: 601px) and (max-width: 1199px) {
+    :root {
+        --height-section: 400px;
+        --height-section-archivo: 600px;
+        --width-dropzone: 400px;
+        --font-size-nav: 1rem;
+        --font-size-t1: 1.5rem;
+        --font-size-t2: 1.3rem;
+        --font-size-t3: 1rem;
+        --font-size-h2-seccionTexto: 1.5rem;
+        --font-size-p-seccionTexto: 1rem;
+        --font-size-h2-textoDropzone: 1.4rem;
+        --font-size-h4-textoDropzone: 1rem;
+        --font-size-archivoTexto: 1rem;
+        --font-size-h2-seccionAcciones: 1.4rem;
+        --height-iconoAccion: 1.4rem;
+        --font-size-accion: 0.9rem;
+        --font-size-btnElegirAcciones: 1rem;
+        --font-size-textoProgreso: 1rem;
+        --width-barraProgresoVideosFull: 150px;
+    }
+}
+
+/* Estilos para pantallas de tamaño pequeño */
+@media (max-width: 600px) {
+    :root {
+        display: flex;
+        --height-section: 300px;
+        --height-section-archivo: 500px;
+        --width-dropzone: 300px;
+        --font-size-nav: 0.8rem;
+        --font-size-t1: 1.2rem;
+        --font-size-t2: 0.9rem;
+        --font-size-t3: 0.7rem;
+        --font-size-h2-seccionTexto: 1.2rem;
+        --font-size-p-seccionTexto: 0.8rem;
+        --font-size-h2-textoDropzone: 1.2rem;
+        --font-size-h4-textoDropzone: 0.8rem;
+        --font-size-archivoTexto: 0.8rem;
+        --font-size-h2-seccionAcciones: 1.1rem;
+        --height-iconoAccion: 0.9rem;
+        --font-size-accion: 0.6rem;
+        --font-size-btnElegirAcciones: 0.8rem;
+        --font-size-textoProgreso: 0.8rem;
+        --width-barraProgresoVideosFull: 100px;
+    }
+
+    .textoDer{
+        padding-right: 0;
+    }
+
+    .textoIzq{
+        padding-left: 0;
+    }
+
+    .nav__texto {
+        width: 100%; /* Asegura que el div ocupe todo el ancho */
+        text-align: center; /* Centra el texto */
+    }
+
+    .imgSeccion {
+        display: none;
+    }
+
+    .seccion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

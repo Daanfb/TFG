@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    build: ./web
+    ports:
+      - "5554:80"
+    volumes:
+      - ./web:/usr/share/nginx/html
+  
+  api:
+    build: ./api
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./api:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+              device_ids: ['0']

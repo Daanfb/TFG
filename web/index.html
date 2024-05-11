@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TFG</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav__texto">
+                TFG - Daniel Frías Balbuena
+            </div>
+        </nav>
+
+        <div class="introUniversidad">
+            <h1 class="t1">Trabajo de Fin de Grado</h1>
+            <p class="t2">Obtención de mejores momentos de un partido de fútbol</p>
+            <p class="t3">Creado por Daniel Frías Balbuena</p>
+            <img class="imgUS" src="imgs/logoUS.png" alt="Logo Universidad de Sevilla">
+        </div>
+    </header>
+
+    <div class="seccion seccionImpar">
+        <div class="seccionImg columnaIzq hidden">
+            <img class="imgSeccion" src="imgs/cr7.png" alt="Cristiano Ronaldo">
+        </div>
+        <div class="seccionTexto textoDer columnaDer hidden">
+            <h2>¿Qué obtengo en la página?</h2>
+            <p>Obtén el <span class="texto-rojo">vídeo de las mejores acciones</span> del partido mediante el uso de inteligencia artificial.</p>
+        </div>
+    </div>
+
+    <div class="seccion seccionPar">
+        <div class="seccionTexto textoIzq columnaIzq hidden">
+            <h2>Paso 1</h2>
+            <p>Sube un vídeo del partido y el modelo de inteligencia artificial predicirá el segundo en el que ocurrieron <span class="texto-amarillo">¡hasta 17 acciones diferentes!</span></p>
+        </div>
+        <div class="seccionImg columnaDer hidden">
+            <img class="imgSeccion" src="imgs/casillas.png" alt="Iker Casillas">
+        </div>
+    </div>
+
+    <div class="seccion seccionImpar">
+        <div class="seccionImg columnaIzq hidden">
+            <img class="imgSeccion" src="imgs/iniesta.png" alt="Andrés Iniesta">
+        </div>
+        <div class="seccionTexto textoDer columnaDer hidden">
+            <h2>Paso 2</h2>
+            <p><span class="texto-azul">Elige las acciones</span> que quieras que se muestren en el vídeo y disfruta de él.</p>
+        </div>
+    </div>
+
+    <div class="seccionArchivo">
+        <div class="errorzone" id="errorzoneArchivo"></div>
+        <div class="dropzone">
+            <div class="textoDropzone">
+                <h2>Arrastra y suelta el vídeo</h2>
+                <h4>(máximo 1 vídeo del partido en formato .mp4 o .mkv)</h4>
+            </div>
+            <span>o</span>
+            <button class="btnDropzone btnSubirArchivo" id="btnSubirArchivo">Selecciona un archivo</button>
+            <input type="file" id="inputSubirArchivo" hidden multiple>
+            <div class="videos"></div>
+        </div>
+        
+        <button class="btnEnviar oculto" id="btnEnviarVideos">Enviar</button>
+        <div class="contenedorCargando">
+            <img class= "cargando oculto" id="cargando" src="imgs/cargando.gif" alt="Cargando...">
+        </div>
+    </div>
+
+    <div class="seccionAcciones" id="seccionAcciones">
+        <h2>Selecciona las acciones que quieres que se muestren</h2>
+        <div class="acciones">
+            <div class="errorzone" id="errorzoneAcciones"></div>
+
+            <ul class="columnaAcciones">
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/gol.png">
+                    <p>Gol</p>
+                </li>
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/tiro-puerta.png">
+                    <p>Tiro a puerta</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/tiro-fuera.png">
+                    <p>Tiro que no va a puerta</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/falta.png">
+                    <p>Falta</p>
+                </li>
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/falta-directa.png">
+                    <p>Lanzamiento de falta directa</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/falta-indirecta.png">
+                    <p>Lanzamiento de falta indirecta</p>
+                </li>
+            </ul>
+            <ul class="columnaAcciones">
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/fuera-de-juego.png">
+                    <p>Fuera de juego</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/despeje.png">
+                    <p>Despeje</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/corner.png">
+                    <p>Lanzamiento de corner</p>
+                </li>
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/penalti.png">
+                    <p>Penalti</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/sustitucion.png">
+                    <p>Sustitución</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/saque-centro-campo.png">
+                    <p>Saque desde el centro del campo</p>
+                </li>
+            </ul>
+            <ul class="columnaAcciones">
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/amarilla.png">
+                    <p>Primera tarjeta amarilla</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/segunda-amarilla.png">
+                    <p>Segunda tarjeta amarilla</p>
+                </li>
+                <li class="accion accionSeleccionada">
+                    <img class="iconoAccion" src="imgs/iconos/roja.png">
+                    <p>Tarjeta roja</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/saque-banda.png">
+                    <p>Saque de banda</p>
+                </li>
+                <li class="accion">
+                    <img class="iconoAccion" src="imgs/iconos/balon-fuera.png">
+                    <p>Balón fuera</p>
+                </li>
+            </ul>  
+        </div>
+        <div class="acciones">
+            <div class="contenedorProgreso">
+
+                <div class="contenedorBarraProgreso">
+                    <div class="barraProgresoVideosFull">
+                        <div class="barraProgresoVideos" id="barraProgresoVideos"></div>
+                    </div>
+                    <p class="textoProgreso" id="textoProgreso">0%</p>
+                </div>
+            </div>
+
+            <div class="contenedorBtnElegirAcciones">
+                <button class="btnElegirAcciones" id="btnElegirAcciones">Enviar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
