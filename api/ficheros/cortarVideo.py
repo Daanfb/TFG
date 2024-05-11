@@ -185,11 +185,3 @@ class MiVideo():
         video_combinado.close()
 
         return ruta_video_combinado
-    
-# if __name__ == "__main__":
-#     ruta_json = 'api/json/791248b2-b2af-4cb3-957b-f738a2b71e9e.json'
-#     acciones_seleccionadas = 'Gol'
-#     ruta_video = 'api/videos/791248b2-b2af-4cb3-957b-f738a2b71e9e.mkv'
-#     mi_video = MiVideo(ruta_json, acciones_seleccionadas, ruta_video)
-#     ruta_highlights = mi_video.cortar_video()
-#
