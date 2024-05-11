@@ -1,1 +1,1 @@
-Carpeta donde se guardarán los videos insertados por el usuario
+Carpeta donde se guardarán los vídeos insertados por el usuario.
