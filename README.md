@@ -7,7 +7,7 @@ Este repositorio contiene el código necesario para realizar el despliegue del T
 
 Para poder realizar el despligue se necesita lo siguiente:
 
-- Disponer de más de 20GB de almacenamiento para los imágenes.
+- Disponer de más de 20GB de almacenamiento para las imágenes.
 - Tener una GPU NVIDIA y los drivers para poder realizar inferencia del modelo.
 - Tener Docker instalado.
 - Tener libres los puertos 5554 y 5555.
